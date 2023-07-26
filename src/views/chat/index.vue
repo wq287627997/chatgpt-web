@@ -630,8 +630,13 @@ onUnmounted(() => {
           <NSpin :show="firstLoading">
             <template v-if="!dataSources.length">
               <div class="flex items-center justify-center mt-4 text-center text-neutral-300">
-                <SvgIcon icon="ri:bubble-chart-fill" class="mr-2 text-3xl" />
-                <span>Aha~</span>
+                <SvgIcon icon="mdi:notice-board" class="mr-2 text-3xl" />
+                <span>温馨提示</span>
+              </div>
+              <div class="flex items-center justify-center mt-4 text-center text-neutral-300">
+                <n-card title="卡片">
+                  本站免费提供GPT，免费云端同步对话！
+                </n-card>
               </div>
             </template>
             <template v-else>
