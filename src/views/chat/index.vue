@@ -636,6 +636,7 @@ onUnmounted(() => {
               <div class="flex items-center justify-center mt-4 text-center text-neutral-300">
                 <n-card title="卡片">
                   本站免费提供GPT，免费云端同步对话！
+                  <a href="http://chat1.suiyigpt.top">自用GPT账号登陆镜像站</a>
                 </n-card>
               </div>
             </template>
