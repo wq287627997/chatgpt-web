@@ -461,12 +461,9 @@ function handleClear() {
 function viewAll() {
   const n = notification.create({
     title: '完整公告',
-    content: `本站免费提供GPT，免费云端同步对话！
-              本站不会收集任何用户信息，也不会用于任何商业用途！
-              如果你喜欢本站，请分享给你的朋友！
-              如果想使用原汁原味的GPT，可使用https://chat1.suiyigpt.top，
-              点击下方按钮即可跳转！
-              `,
+    content: `  本站免费提供GPT，免费云端同步对话！本站不会收集任何用户信息，也不会用于任何商业用途！如果你喜欢本站，请分享给你的朋友！
+  如果想使用原汁原味的GPT，可使用站长的另外一个网站http://chat1.suiyigpt.top，也是免费的，网站提供魔法直连官网！
+`,
     meta: '2023-7-30 15:11',
     action: () =>
       h(
@@ -479,11 +476,11 @@ function viewAll() {
           },
         },
         {
-          default: () => '立即前往',
+          default: () => '关闭',
         },
       ),
     onClose: () => {
-      window.location.href = 'https://chat1.suiyigpt.top';
+      // window.location.href = 'https://chat1.suiyigpt.top';
     },
   })
 }
@@ -667,7 +664,7 @@ onUnmounted(() => {
               <div class="flex items-center justify-center mt-4 text-center text-neutral-300">
                 <n-card title="卡片">
                   本站免费提供GPT，免费云端同步对话！<br>
-                  如果想使用原汁原味的GPT...<span style="color: blue; cursor: pointer; text-decoration: underline;" @click="viewAll">查看全部</span>
+                  如果想使用原汁原味的GPT... <span style="color: blue; cursor: pointer; text-decoration: underline;" @click="viewAll">查看全部</span>
                 </n-card>
               </div>
             </template>
