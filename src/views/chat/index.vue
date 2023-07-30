@@ -667,7 +667,7 @@ onUnmounted(() => {
               <div class="flex items-center justify-center mt-4 text-center text-neutral-300">
                 <n-card title="卡片">
                   本站免费提供GPT，免费云端同步对话！<br>
-                  如果想使用原汁原味的GPT...<span style="color: blue;" @click="viewAll">查看全部</span>
+                  如果想使用原汁原味的GPT...<span style="color: blue; cursor: pointer; text-decoration: underline;" @click="viewAll">查看全部</span>
                 </n-card>
               </div>
             </template>
