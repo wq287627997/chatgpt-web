@@ -459,13 +459,13 @@ function handleClear() {
 }
 
 function viewAll() {
-  let markAsRead = false
   const n = notification.create({
     title: '完整公告',
-    content: `I cant get no satisfaction
-I cant get no satisfaction
-Cause I try and I try and I try and I try
-I cant get no, I cant get no`,
+    content: `本站免费提供GPT，免费云端同步对话！<br>
+              本站不会收集任何用户信息，也不会用于任何商业用途！<br />
+              如果想使用原汁原味的GPT，可使用https://chat.suiyigpt.top<br />
+              如果你喜欢本站，请分享给你的朋友！<br />
+              `,
     meta: '2023-7-30 15:11',
     action: () =>
       h(
@@ -474,7 +474,6 @@ I cant get no, I cant get no`,
           text: true,
           type: 'primary',
           onClick: () => {
-            markAsRead = true
             n.destroy()
           },
         },
@@ -484,7 +483,6 @@ I cant get no, I cant get no`,
       ),
     onClose: () => {
       // if (!markAsRead) {
-      //   message.warning('请设为已读')
       //   return false
       // }
     },
