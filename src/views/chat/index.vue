@@ -636,7 +636,10 @@ onUnmounted(() => {
               <div class="flex items-center justify-center mt-4 text-center text-neutral-300">
                 <n-card title="卡片">
                   本站免费提供GPT，免费云端同步对话！<br /><br />
-                  <a href="http://chat1.suiyigpt.top" style="color: blue; text-decoration: underline;">ChatGPT官网登陆</a>
+                  <a href="http://chat1.suiyigpt.top" style="color: blue; text-decoration: underline;">ChatGPT官网登陆</a><br />
+                  <n-alert title="Info 类型" type="info">
+                    Gee it's good to be back home
+                  </n-alert>
                 </n-card>
               </div>
             </template>
