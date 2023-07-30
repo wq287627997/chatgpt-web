@@ -1,10 +1,10 @@
 <script setup lang='ts'>
 import type { Ref } from 'vue'
-import { computed, defineAsyncComponent, nextTick, onMounted, onUnmounted, ref, watch } from 'vue'
+import { computed, defineAsyncComponent, h, nextTick, onMounted, onUnmounted, ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
 import { storeToRefs } from 'pinia'
 import type { MessageReactive } from 'naive-ui'
-import { NAutoComplete, NButton, NInput, NSelect, NSpace, NSpin, useDialog, useMessage } from 'naive-ui'
+import { NAutoComplete, NButton, NInput, NSelect, NSpace, NSpin, useDialog, useMessage, useNotification } from 'naive-ui'
 import html2canvas from 'html2canvas'
 import { Message } from './components'
 import { useScroll } from './hooks/useScroll'
@@ -29,6 +29,7 @@ const openLongReply = import.meta.env.VITE_GLOB_OPEN_LONG_REPLY === 'true'
 const route = useRoute()
 const dialog = useDialog()
 const ms = useMessage()
+const notification = useNotification()
 const authStore = useAuthStore()
 const userStore = useUserStore()
 const chatStore = useChatStore()
@@ -457,6 +458,39 @@ function handleClear() {
   })
 }
 
+function viewAll() {
+  let markAsRead = false
+  const n = notification.create({
+    title: '完整公告',
+    content: `I cant get no satisfaction
+I cant get no satisfaction
+Cause I try and I try and I try and I try
+I cant get no, I cant get no`,
+    meta: '2023-7-30 15:11',
+    action: () =>
+      h(
+        NButton,
+        {
+          text: true,
+          type: 'primary',
+          onClick: () => {
+            markAsRead = true
+            n.destroy()
+          },
+        },
+        {
+          default: () => '关闭',
+        },
+      ),
+    onClose: () => {
+      // if (!markAsRead) {
+      //   message.warning('请设为已读')
+      //   return false
+      // }
+    },
+  })
+}
+
 function handleEnter(event: KeyboardEvent) {
   if (!isMobile.value) {
     if (event.key === 'Enter' && !event.shiftKey) {
@@ -635,11 +669,8 @@ onUnmounted(() => {
               </div>
               <div class="flex items-center justify-center mt-4 text-center text-neutral-300">
                 <n-card title="卡片">
-                  本站免费提供GPT，免费云端同步对话！<br /><br />
-                  <a href="http://chat1.suiyigpt.top" style="color: blue; text-decoration: underline;">ChatGPT官网登陆</a><br />
-                  <n-alert title="Info 类型" type="info">
-                    Gee it's good to be back home
-                  </n-alert>
+                  本站免费提供GPT，免费云端同步对话！<br>
+                  如果想使用原汁原味的GPT，可<span style="color: blue;" @click="viewAll">查看全部</span>
                 </n-card>
               </div>
             </template>
