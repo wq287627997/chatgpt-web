@@ -467,17 +467,36 @@ function viewAll() {
     meta: '2023-7-30 15:11',
     action: () =>
       h(
-        NButton,
-        {
-          text: true,
-          type: 'primary',
-          onClick: () => {
-            n.destroy()
-          },
-        },
-        {
-          default: () => '关闭',
-        },
+        'div', // 使用 div 元素包裹按钮，以便并排显示多个按钮
+        null,
+        [
+          h(
+            NButton,
+            {
+              text: true,
+              type: 'primary',
+              onClick: () => {
+                window.open('http://chat1.suiyigpt.top', '_blank')
+              },
+            },
+            {
+              default: () => '跳转',
+            },
+          ),
+          h(
+            NButton,
+            {
+              text: true,
+              type: 'primary',
+              onClick: () => {
+                n.destroy() // 关闭通知
+              },
+            },
+            {
+              default: () => '关闭',
+            },
+          ),
+        ],
       ),
     onClose: () => {
       // window.location.href = 'https://chat1.suiyigpt.top';
@@ -664,7 +683,7 @@ onUnmounted(() => {
               <div class="flex items-center justify-center mt-4 text-center text-neutral-300">
                 <n-card title="卡片">
                   本站免费提供GPT，免费云端同步对话！<br>
-                  如果想使用原汁原味的GPT...&nbsp;&nbsp;<span style="cursor: pointer; text-decoration: underline;" @click="viewAll">完整公告</span>&nbsp;
+                  如果想使用原汁原味的GPT&nbsp;...&nbsp;&nbsp;<span style="cursor: pointer; text-decoration: underline;" @click="viewAll">完整公告</span>&nbsp;
                 </n-card>
               </div>
             </template>
