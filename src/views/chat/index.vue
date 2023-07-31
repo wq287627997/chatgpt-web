@@ -462,7 +462,7 @@ function viewAll() {
   const n = notification.create({
     title: '公告详情',
     content: `     本站免费提供GPT，免费云端同步对话！本站不会收集任何用户信息，也不会用于任何商业用途！如果你喜欢本站，请分享给你的朋友！
-     如果想使用原汁原味的GPT，可使用站长的另外一个网站https://pandora.suiyigpt.top，该站提供魔法直连官网，也是免费的，直接输入官方的账号密码登陆，也支持Access Token方式登陆，可自行选择，点击下方"立即前往"！
+     如果想免梯使用官方的GPT，可使用站长的另外一个网站https://pandora.suiyigpt.top，该站提供魔法直连官网，也是免费的，直接输入官方的账号密码登陆，也支持Access Token方式登陆，可自行选择，点击下方"立即前往"！
      关注公众号「SuiYiGPT」，可直接向公众号发送消息联系站长！也请大家宣传本站，宣传20位朋友关注公众号，免费领取一个GPT账号，可以在上面的网站使用，当然也可以直接在官方登陆，自行更改密码！
 `,
     meta: '2023-7-30 15:11',
@@ -684,7 +684,7 @@ onUnmounted(() => {
               <div class="flex items-center justify-center mt-4 text-center text-neutral-300">
                 <n-card title="卡片">
                   本站免费提供GPT，免费云端同步对话！<br>
-                  如果想使用原汁原味的GPT&nbsp;...&nbsp;<span style="cursor: pointer; text-decoration: underline;" @click="viewAll">展开所有</span>&nbsp;&nbsp;
+                  如果想免梯使用官方的GPT&nbsp;...&nbsp;<span style="cursor: pointer; text-decoration: underline;" @click="viewAll">展开所有</span>&nbsp;&nbsp;
                 </n-card>
               </div>
             </template>
