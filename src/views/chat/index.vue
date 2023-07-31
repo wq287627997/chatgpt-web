@@ -462,7 +462,7 @@ function viewAll() {
   const n = notification.create({
     title: '完整公告',
     content: `     本站免费提供GPT，免费云端同步对话！本站不会收集任何用户信息，也不会用于任何商业用途！如果你喜欢本站，请分享给你的朋友！
-     如果想使用原汁原味的GPT，可使用站长的另外一个网站http://chat1.suiyigpt.top，网站提供魔法直连官网，也是免费的，点击下方"立即前往"！
+     如果想使用原汁原味的GPT，可使用站长的另外一个网站https://pandora.suiyigpt.top，网站提供魔法直连官网，也是免费的，点击下方"立即前往"！
 `,
     meta: '2023-7-30 15:11',
     action: () =>
@@ -476,7 +476,7 @@ function viewAll() {
               text: true,
               type: 'primary',
               onClick: () => {
-                window.open('http://chat1.suiyigpt.top', '_blank')
+                window.open('https://pandora.suiyigpt.top', '_blank')
               },
             },
             {
@@ -499,7 +499,7 @@ function viewAll() {
         ],
       ),
     onClose: () => {
-      // window.location.href = 'https://chat1.suiyigpt.top';
+      // window.location.href = 'https://pandora.suiyigpt.top';
     },
   })
 }
