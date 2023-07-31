@@ -468,7 +468,7 @@ function viewAll() {
     action: () =>
       h(
         'div', // 使用 div 元素包裹按钮，以便并排显示多个按钮
-        { style: 'display: flex; gap: 8px;' }, // 使用 flex 布局并设置间距为 8 像素
+        { style: 'display: flex; gap: 10px;' }, // 使用 flex 布局并设置间距为 10 像素
         [
           h(
             NButton,
@@ -493,7 +493,7 @@ function viewAll() {
               },
             },
             {
-              default: () => '关闭通知',
+              default: () => '关闭',
             },
           ),
         ],
